@@ -317,7 +317,7 @@ var article = {
     panels = [0,1,2,3,4,5,6];
     for (author in article){
       currIndex = panels[Math.floor(Math.random()*panels.length)];
-      currPanel = $(".panel")[currPanel];
+      currPanel = $(".panel")[currIndex];
       $(currPanel).attr("data-author", author);
       $(currPanel).attr("href", "#"+author);
       //Insert background-css
