@@ -316,6 +316,7 @@ var article = {
   function setUp(article){
     panelNum = 0;
     for (author in article){
+      console.log(panelNum);
       currPanel = $(".panel")[panelNum];
       $(currPanel).attr("data-author", author);
       $(currPanel).attr("href", "#"+author);
