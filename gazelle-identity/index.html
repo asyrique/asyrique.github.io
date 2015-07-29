@@ -182,10 +182,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 980px){
-  .component-wrapper {
-    pointer-events: none;
-  }
+@media screen and (max-width: 979px){
   .kwicks a>span {
     opacity:1;
   }
@@ -401,6 +398,9 @@ var article = {
   };
 
   $().ready(function() {
+    if (!("ontouchstart" in document.documentElement)) {
+      document.documentElement.className += " no-touch";
+    }
     setUp(article);
 
     if ($(window).width() > 980){
