@@ -326,7 +326,7 @@ var article = {
       $(".title-text", currPanel).html("<h1>" + article[author]["author"] + "</h1><h2>" + article[author]["status"] + '</h2><i class="icon-circle-down"></i>');
       panels = $.grep(panels, function(value){
         return value != currIndex;
-      }
+      });
       console.log(currIndex);
       console.log(panels);
     }
