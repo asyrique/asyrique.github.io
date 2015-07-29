@@ -416,6 +416,7 @@ var article = {
     });
     $('.icon-circle-up').on('click', function(e){
       closeArticle();
+      window.location.hash="";
       e.preventDefault();
     });
     $(window).resize(function(event) {
