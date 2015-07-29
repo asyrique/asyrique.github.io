@@ -408,6 +408,9 @@ var article = {
         .css("width", "100%")
         .css("left", "0px");
     }
+    if (window.location.hash != ""){
+      loadArticle(window.location.hash.replace('#',""), null);
+    }
     $('.panel').on('click', function(e){
       loadArticle($(this).attr('data-author'), e);
     });
