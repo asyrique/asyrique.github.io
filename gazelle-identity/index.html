@@ -314,17 +314,17 @@ var article = {
 </script>
 <script type='text/javascript'>
   function setUp(article){
-    panelNum = 0;
+    panels = [0,1,2,3,4,5,6];
     for (author in article){
-      console.log(panelNum);
-      currPanel = $(".panel")[panelNum];
+      currIndex = panels[Math.floor(Math.random()*panels.length)];
+      currPanel = $(".panel")[currPanel];
       $(currPanel).attr("data-author", author);
       $(currPanel).attr("href", "#"+author);
       //Insert background-css
       $(currPanel).addClass(author);
       //Insert Author name and class
       $(".title-text", currPanel).html("<h1>" + article[author]["author"] + "</h1><h2>" + article[author]["status"] + '</h2><i class="icon-circle-down"></i>');
-      panelNum++;
+      panels.splice(currIndex, 1);
     }
   };
   function loadArticle(author, e){
