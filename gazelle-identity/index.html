@@ -182,7 +182,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 979px){
+@media screen and (max-width: 959px){
   .kwicks a>span {
     opacity:1;
   }
@@ -390,7 +390,7 @@ var article = {
         next();
       })
       .queue(function(next){
-        if ($(window).width() > 980){
+        if ($(window).width() > 960){
           $(".component-wrapper").css("overflow-y", "hidden");
         }
         next();
@@ -403,7 +403,7 @@ var article = {
     }
     setUp(article);
 
-    if ($(window).width() > 980){
+    if ($(window).width() > 960){
       $('.kwicks').kwicks({
         maxSize : 500,
         duration: 350,
