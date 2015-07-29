@@ -324,7 +324,11 @@ var article = {
       $(currPanel).addClass(author);
       //Insert Author name and class
       $(".title-text", currPanel).html("<h1>" + article[author]["author"] + "</h1><h2>" + article[author]["status"] + '</h2><i class="icon-circle-down"></i>');
-      panels.splice(currIndex, 1);
+      panels = $.grep(panels, function(value){
+        return value != currIndex;
+      }
+      console.log(currIndex);
+      console.log(panels);
     }
   };
   function loadArticle(author, e){
