@@ -41,10 +41,6 @@
   width:13vw;
   margin-bottom:-20px;
 }
-.identity-menu:hover > .menu-overlay{
-  opacity:0;
-  visibility:hidden;
-}
 .kwicks{
   height:100%;
   width:100%;
@@ -59,14 +55,6 @@
   background-color: #888;
   background-blend-mode: multiply;
   text-decoration:none;
-}
-.kwicks > a:hover{
-  background-color: #ddd;
-  cursor: pointer;
-}
-.kwicks a:hover > span{
-  opacity:1;
-  transition: opacity 0.5s ease 0.5s;
 }
 
 .title-text{
@@ -143,9 +131,6 @@
   border-bottom: 0 solid #009575;
   transition: border 0.3s ease;
 }
-.article-container > .essay a:hover {
-  border-bottom: 3px solid #00D7A9;
-}
 .article-container > .essay > .footnote {
   font-size:1rem;
   font-style: italic;
@@ -172,16 +157,32 @@
   padding-top:2rem;
 
 }
-.article-container > .back i:hover{
-  text-shadow: 0px 0px 6px rgba(77, 77, 77, 1);
-}
 .article-container > .back i {
   font-size: 3rem;
   text-shadow: 0px 0px 3px rgba(77, 77, 77, 0.8);
   transition: text-shadow 0.4s ease;
   cursor: pointer;
 }
-
+@media screen and (min-width: 960px){
+  .identity-menu:hover > .menu-overlay{
+    opacity:0;
+    visibility:hidden;
+  }
+  .kwicks > a:hover{
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  .kwicks a:hover > span{
+    opacity:1;
+    transition: opacity 0.5s ease 0.5s;
+  }
+  .article-container > .essay a:hover {
+    border-bottom: 3px solid #00D7A9;
+  }
+  .article-container > .back i:hover{
+    text-shadow: 0px 0px 6px rgba(77, 77, 77, 1);
+  }
+}
 @media screen and (max-width: 959px){
   .kwicks a>span {
     opacity:1;
@@ -390,7 +391,7 @@ var article = {
         next();
       })
       .queue(function(next){
-        if ($(window).width() > 960){
+        if ($(window).width() >= 960){
           $(".component-wrapper").css("overflow-y", "hidden");
         }
         next();
@@ -403,7 +404,7 @@ var article = {
     }
     setUp(article);
 
-    if ($(window).width() > 960){
+    if ($(window).width() >= 960){
       $('.kwicks').kwicks({
         maxSize : 500,
         duration: 350,
@@ -431,7 +432,7 @@ var article = {
     });
     $(window).resize(function(event) {
       /* Act on the event */
-      if ($(window).width() > 960){
+      if ($(window).width() >= 960){
         if ( $(".kwicks").hasClass("kwicks-processed") === false){
           $('.kwicks').kwicks({
             maxSize : 500,
