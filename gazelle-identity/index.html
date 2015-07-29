@@ -163,7 +163,7 @@
   transition: text-shadow 0.4s ease;
   cursor: pointer;
 }
-@media screen and (min-width: 960px){
+@media screen and (min-width: 981px){
   .identity-menu:hover > .menu-overlay{
     opacity:0;
     visibility:hidden;
@@ -183,7 +183,7 @@
     text-shadow: 0px 0px 6px rgba(77, 77, 77, 1);
   }
 }
-@media screen and (max-width: 959px){
+@media screen and (max-width: 980px){
   .kwicks a>span {
     opacity:1;
   }
@@ -391,7 +391,7 @@ var article = {
         next();
       })
       .queue(function(next){
-        if ($(window).width() >= 960){
+        if ($(window).width() > 980){
           $(".component-wrapper").css("overflow-y", "hidden");
         }
         next();
@@ -404,7 +404,7 @@ var article = {
     }
     setUp(article);
 
-    if ($(window).width() >= 960){
+    if ($(window).width() > 980){
       $('.kwicks').kwicks({
         maxSize : 500,
         duration: 350,
@@ -432,7 +432,7 @@ var article = {
     });
     $(window).resize(function(event) {
       /* Act on the event */
-      if ($(window).width() >= 960){
+      if ($(window).width() > 980){
         if ( $(".kwicks").hasClass("kwicks-processed") === false){
           $('.kwicks').kwicks({
             maxSize : 500,
