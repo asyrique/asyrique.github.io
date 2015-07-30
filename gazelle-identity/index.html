@@ -1,11 +1,11 @@
 <!-- Dev purposes... REMOVE ON DEPLOY! -->
 <!-- <dev> -->
-<script src="resources/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://asyrique.github.io/gazelle-identity/resources/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <!-- </dev> -->
 <!-- <upload> -->
-<link rel="stylesheet" href="resources/kwicks/jquery.kwicks.css" media="screen" title="no title" charset="utf-8">
-<link href='./fonts.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://asyrique.github.io/gazelle-identity/resources/kwicks/jquery.kwicks.css" media="screen" title="no title" charset="utf-8">
+<link href='http://asyrique.github.io/gazelle-identity/fonts.css' rel='stylesheet' type='text/css'>
 <!-- </upload> -->
 <style>
 .component-wrapper{
@@ -79,14 +79,14 @@
   font-size: 2.1rem;
   margin-top:0.5rem;
 }
-.cole { background: url(img/cole_tanigawa_lau.jpg);}
-.zoe { background: url(img/zoe_hu.jpg); }
-.allanah { background: url(img/allanah-alexandra_avalon.jpg); }
-.nick { background: url(img/nick_chaubey.jpg); }
-.sam { background: url(img/sam_ball.jpg); }
-.sebastian { background: url(img/sebastian_rojas_cabal.jpg); }
-.tom { background: url(img/tom_klein.jpg); }
-.panel {
+.cole { background: url(http://asyrique.github.io/gazelle-identity/img/cole_tanigawa_lau.jpg);}
+.zoe { background: url(http://asyrique.github.io/gazelle-identity/img/zoe_hu.jpg); }
+.allanah { background: url(http://asyrique.github.io/gazelle-identity/img/allanah-alexandra_avalon.jpg); }
+.nick { background: url(http://asyrique.github.io/gazelle-identity/img/nick_chaubey.jpg); }
+.sam { background: url(http://asyrique.github.io/gazelle-identity/img/sam_ball.jpg); }
+.sebastian { background: url(http://asyrique.github.io/gazelle-identity/img/sebastian_rojas_cabal.jpg); }
+.tom { background: url(http://asyrique.github.io/gazelle-identity/img/tom_klein.jpg); }
+.panel-article {
   background-size: cover;
   background-position: center;
 }
@@ -227,39 +227,39 @@
 @keyframes bounce { 0% {transform: translate(0,20px);} 100% {transform: translate(0, 30px);} }
 </style>
 <div class="component-wrapper">
-  <div class="container">
+  <div class="identity-container">
     <section class="identity-menu">
       <div class="menu-overlay">
-        <img src="resources/gazelle-branding/gazelle_logo_white.svg" alt="" />
+        <img src="http://asyrique.github.io/gazelle-identity/resources/gazelle-branding/gazelle_logo_white.svg" alt="" />
         <div class="subheader">The Gazelle Interactive</div>
         <div>identity</div>
       </div>
       <section class="kwicks kwicks-horizontal">
-        <a href="" class="panel" data-author="">
+        <a href="" class="panel-article" data-author="">
           <span class="title-text">
           </span>
         </a>
-        <a href="" class="panel" data-author="">
+        <a href="" class="panel-article" data-author="">
           <span class="title-text">
           </span>
         </a>
-        <a href="" class="panel" data-author="">
+        <a href="" class="panel-article" data-author="">
           <span class="title-text">
           </span>
         </a>
-        <a href="" class="panel" data-author="">
+        <a href="" class="panel-article" data-author="">
           <span class="title-text">
           </span>
         </a>
-        <a href="" class="panel" data-author="">
+        <a href="" class="panel-article" data-author="">
           <span class="title-text">
           </span>
         </a>
-        <a href="" class="panel" data-author="">
+        <a href="" class="panel-article" data-author="">
           <span class="title-text">
           </span>
         </a>
-        <a href="" class="panel" data-author="">
+        <a href="" class="panel-article" data-author="">
           <span class="title-text">
           </span>
         </a>
@@ -278,9 +278,9 @@
   </div>
 </div>
 <!-- Insert the component-wrapper div at the top of the body -->
-<script src="resources/kwicks/jquery.kwicks.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://asyrique.github.io/gazelle-identity/resources/kwicks/jquery.kwicks.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-  $('.component-wrapper').prependTo(document.body);
+  // $('.component-wrapper').prependTo(document.body);
 </script>
 <script type="text/javascript">
 var article = {
@@ -354,7 +354,7 @@ var article = {
     panels = [0,1,2,3,4,5,6];
     for (author in article){
       currIndex = panels[Math.floor(Math.random()*panels.length)];
-      currPanel = $(".panel")[currIndex];
+      currPanel = $(".panel-article")[currIndex];
       $(currPanel).attr("data-author", author);
       $(currPanel).attr("href", "#"+author);
       //Insert background-css
@@ -449,14 +449,14 @@ var article = {
     }
     else {
       $(".component-wrapper").css("overflow-y", "scroll");
-      $(".panel")
+      $(".panel-article")
         .css("width", "100%")
         .css("left", "0px");
     }
     if (window.location.hash != ""){
       loadArticle(window.location.hash.replace('#',""), null);
     }
-    $('.panel').on('click', function(e){
+    $('.panel-article').on('click', function(e){
       loadArticle($(this).attr('data-author'), e);
     });
     $('.icon-circle-up').on('click', function(e){
@@ -481,7 +481,7 @@ var article = {
       else{
         $(".kwicks").kwicks('destroy');
         $(".component-wrapper").css("overflow-y", "scroll");
-        $(".panel")
+        $(".panel-article")
           .css("width", "100%")
           .css("left", "0px");
       }
