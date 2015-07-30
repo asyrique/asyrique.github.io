@@ -282,7 +282,7 @@
 </div>
 <!-- Insert the component-wrapper div at the top of the body -->
 <script type="text/javascript">
-  // $('.component-wrapper').prependTo(document.body);
+  $('.component-wrapper').prependTo(document.body);
 </script>
 <script type="text/javascript">
 var article = {
@@ -434,7 +434,7 @@ var article = {
       });
   };
 
-  $(document).ready(function() {
+  $().ready(function() {
     setUp(article);
 
     if ($(window).width() > 980){
